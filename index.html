@@ -48,12 +48,126 @@
             {{/with}}
         </header><!--//header-->   
 
+    <div class="container sections-wrapper">
+        <div class="row">
+            <div class="primary col-lg-8 col-12">
+                <section class="about section">
+                    <div class="section-inner">
+                        <h2 class="heading">About Me</h2>
+                        <div class="content">
+                            <p>{{{description}}}</p>
+                        </div><!--//content-->
+                    </div><!--//section-inner-->                 
+                </section><!--//section-->
+    
+
+                
+                <section class="experience section">
+                    <div class="section-inner">
+                        <h2 class="heading">Work Experience</h2>
+                        <div class="content">
+                            {{#each work}}
+
+                            <div class="item">
+                                {{#if teacher}}
+                                <h3 class="title">{{occupation}} </h3>
+                                <ul style="list-style-type: none;">
+                                    {{#each schools}}
+                                    <li class="gray"><a href="#" class="gray">{{name}}</a>, {{formatDate startDate "MMM YYYY"}} - {{formatDate endDate "MMM YYYY"}}</li>
+                                    {{/each}}
+                                </ul>
+                                {{else}}
+                                <h3 class="title">{{occupation}}, <span class="place"><a href="{{website}}">{{company}}, </a></span> <span class="year">{{formatDate startDate "MMM YYYY"}} - {{formatDate endDate "MMM YYYY"}}</span></h3>
+                                {{/if}}
+                            </div><!--//item-->
+                            {{/each}}
+
+                            
+                        </div><!--//content-->  
+                    </div><!--//section-inner-->                 
+                </section><!--//section-->
+
+                <section class="education section">
+                    <div class="section-inner">
+                        <h2 class="heading">Education</h2>
+                        <div class="content">
+                            {{#each education}}
+                            <div class="item">
+                                <h3 class="title"><i class="fas fa-graduation-cap"></i> {{what}} </h3>
+                                <p>{{course}}, {{where}}  - <span class="year">{{when}}</span></p>
+                            </div><!--//item-->
+                            {{/each}}
+                            
+                        </div><!--//content-->  
+                    </div><!--//section-inner-->                 
+                </section><!--//section-->
+                
+            </div><!--//primary-->
+            <div class="secondary col-lg-4 col-12">
+                 <aside class="info aside section">
+                    <div class="section-inner">
+                        <h2 class="heading sr-only">Basic Information</h2>
+                        <div class="content">
+                            <ul class="list-unstyled">
+                                <li><i class="fas fa-map-marker-alt"></i><span class="sr-only">Location:</span>{{basics.location}}</li>
+                                <li><i class="fas fa-envelope"></i><span class="sr-only">Email:</span><a href="mailto:{{basics.email}}">{{basics.email}}</a></li>
+                            </ul>
+                        </div><!--//content-->  
+                    </div><!--//section-inner-->                 
+                </aside><!--//aside-->
+ 
+                            
+                <aside class="languages aside section">
+                    <div class="section-inner">
+                        <h2 class="heading">Languages</h2>
+                        <div class="content">
+                            <ul class="list-unstyled">
+                                {{#each languages}}
+                                <li class="item">
+                                    <span class="title"><strong>{{name}}:</strong></span>
+                                    <span class="level">{{level}} 
+                                </li><!--//item-->
+                                {{/each}}
+                            </ul>
+                        </div><!--//content-->
+                    </div><!--//section-inner-->
+                </aside><!--//section-->
+
+                
+                
+              
+            </div><!--//secondary-->    
+        </div><!--//row-->
+    </div><!--//masonry-->
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 </script> 
     
 <!-- Javascript -->          
     <script type="text/javascript" src="assets/js/jquery-3.3.1.min.js"></script>
     <script type="text/javascript" src="assets/plugins/bootstrap/js/bootstrap.min.js"></script>    
     <script src="assets/js/handlebars-v4.0.11.js"></script>
+    <script src="assets/js/moment.min.js"></script>
     <!-- custom js -->
     <script type="text/javascript" src="assets/js/main.js"></script>            
 </body>

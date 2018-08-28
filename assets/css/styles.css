@@ -345,6 +345,10 @@ a.dotted-link:hover {
   margin-bottom: 5px;
   line-height: 1.5;
 }
+.gray {
+  color: #999;
+  font-weight: normal;
+}
 
 .experience .item .title .place {
   color: #999;

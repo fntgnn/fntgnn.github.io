@@ -4,32 +4,61 @@
         "surname": "Fontana",
         "location": "Ferrara",
         "email": "gio.fon@gmail.com",
-        "site": "http://twitter.com/giovannifontana"
+        "linkedin": "https://www.linkedin.com/in/giofontana/",
+        "twitter": "http://twitter.com/giovannifontana",
+        "github": "https://fntgnn.github.com"
     },
-    "description": "Computer Science Teacher with the passion for cycling, rock climbing and music",
-    "jobs":[
+    "description": "Computer Science teacher with the passion for cycling, rock climbing and music",
+    
+    "languages": [
+      {
+        "name": "Italian",
+        "level": "Native speaker"
+      },
+      {
+        "name": "English",
+        "level": "B2"
+      }
+    ],
+
+    "work":[
         {
-            "where": "Gruppo Selyon",
-            "from": "2018-02-05",
-            "to": "2018-08-20",
-            "occupation": "web development", 
-            "title": "Software Engeneer"
+            "company": "Gruppo Selyon",
+            "website": "https://www.selyon.it",
+            "startDate": "2018-02-05",
+            "endDate": "2018-08-20",
+            "summary": "web development", 
+            "occupation": "Software Engeneer"
         },
         {
-            "where": "Ilevia",
-            "from": "2017-09-01",
-            "to": "2018-01-26",
-            "occupation": "web development", 
-            "title": "Full Stack Developer"
+            "company": "Ilevia",
+            "website": "https://www.ilevia.com",
+            "startDate": "2017-09-01",
+            "endDate": "2018-01-26",
+            "summary": "web development", 
+            "occupation": "Full Stack Developer"
         },    
-         {
-            "where": "ITIS \"E. Fermi\", Bassano del Grappa",
-            "from": "2017-09-01",
-            "to": "2018-01-26",
-            "occupation": "teacher", 
-            "title": "Computing Teacher (A041)"
-        }    
-       
+        {
+            "summary": "teacher",
+            "teacher": "true", 
+            "schools":[
+                {"name": "ITIS \"E. Fermi\", Bassano del Grappa", "website": "https://www.fermibassano.gov.it", "startDate": "2016-09-20","endDate": "2017-06-30"},
+                {"name": "ITIS \"E. Fermi\", Bassano del Grappa", "website": "https://www.fermibassano.gov.it", "startDate": "2015-09-21","endDate": "2016-06-30"},
+                {"name": "ITET \"L. Einaudi\", Bassano del Grappa", "website": "https://www.einaudibassano.gov.it", "startDate": "2014-09-22","endDate": "2016-08-31"},
+                {"name": "ITIS \"E. Fermi\", Bassano del Grappa", "website": "https://www.fermibassano.gov.it", "startDate": "2013-11-26","endDate": "2014-06-12"}
+            ],
+            "occupation": "Computing Teacher (A041)"
+        },
+        {
+            "summary": "teacher",
+            "teacher": "true",
+            "schools":[
+                {"name": "IIS \"Primo Levi\", Badia Polesine", "website": "https://www.primolevi.gov.it", "startDate": "2012-10-09","endDate": "2013-06-30"},
+                {"name": "ITIS \"E. Fermi\", Bassano del Grappa", "website": "https://www.primolevi.gov.it", "startDate": "2011-09-14","endDate": "2012-06-30"},
+                {"name": "IT \"L. Einaudi\", Badia Polesine", "website": "https://www.primolevi.gov.it", "startDate": "2010-09-27","endDate": "2011-08-31"}
+            ],
+            "occupation": "Laboratory Teacher of Computing (B016)"
+        }
     ],
     "education": [
         {
@@ -50,6 +79,7 @@
             "where": "University of Ferrara",
             "what": "Master Degree",
             "course" : "Computing",
+            "when": "2010",
             "vote": "101/110"
         },
         {
@@ -61,10 +91,12 @@
         },
         {
             "where": "Technical Industrial Institute of Ferrara",
+            "what": "High School Diploma",
             "course" : "Computing",
             "when": "2003",
             "vote": "107/110"
         }
     ]
+    
 
 }
