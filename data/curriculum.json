@@ -1,0 +1,70 @@
+{
+    "basics": {
+        "name": "Giovanni",
+        "surname": "Fontana",
+        "location": "Ferrara",
+        "email": "gio.fon@gmail.com",
+        "site": "http://twitter.com/giovannifontana"
+    },
+    "description": "Computer Science Teacher with the passion for cycling, rock climbing and music",
+    "jobs":[
+        {
+            "where": "Gruppo Selyon",
+            "from": "2018-02-05",
+            "to": "2018-08-20",
+            "occupation": "web development", 
+            "title": "Software Engeneer"
+        },
+        {
+            "where": "Ilevia",
+            "from": "2017-09-01",
+            "to": "2018-01-26",
+            "occupation": "web development", 
+            "title": "Full Stack Developer"
+        },    
+         {
+            "where": "ITIS \"E. Fermi\", Bassano del Grappa",
+            "from": "2017-09-01",
+            "to": "2018-01-26",
+            "occupation": "teacher", 
+            "title": "Computing Teacher (A041)"
+        }    
+       
+    ],
+    "education": [
+        {
+            "where": "University of Ferrara",
+            "what": "Italian Qualified Teacher Status for Computing (A041)",
+            "course" : "Tirocinio Formativo Attivo",
+            "when": "2013",
+            "vote": "95/100"
+        },
+        {
+            "where": "University of Modena and Reggio Emilia",
+            "what": "Italian Qualified Teacher Status for Laboratory of Computing (B016)",
+            "course" : "Percorso Abilitante Speciale",
+            "when": "2014",
+            "vote": "98/100"
+        },
+        {
+            "where": "University of Ferrara",
+            "what": "Master Degree",
+            "course" : "Computing",
+            "vote": "101/110"
+        },
+        {
+            "where": "University of Ferrara",
+            "what": "First Level Degree",
+            "course" : "Computing",
+            "when": "2007",
+            "vote": "107/110"
+        },
+        {
+            "where": "Technical Industrial Institute of Ferrara",
+            "course" : "Computing",
+            "when": "2003",
+            "vote": "107/110"
+        }
+    ]
+
+}

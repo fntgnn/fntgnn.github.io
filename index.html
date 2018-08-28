@@ -4,9 +4,57 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <title>Giovanni Fontana</title>
+    <!-- Meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Curriculum of Giovanni Fontana">
+    <meta name="author" content="Giovanni Fontana">    
+    <!-- <link rel="shortcut icon" href="favicon.ico"> -->  
+    
+    <link href='https://fonts.googleapis.com/css?family=Lato:300,400,300italic,400italic' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'> 
+    <!-- FontAwesome JS -->
+    <script defer src="https://use.fontawesome.com/releases/v5.1.0/js/all.js" integrity="sha384-3LK/3kTpDE/Pkp8gTNp2gR/2gOiwQ6QaO7Td0zV76UFJVhqLl4Vl3KL1We6q6wR9" crossorigin="anonymous"></script>
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="assets/plugins/bootstrap/css/bootstrap.min.css">   
+    <link id="theme-style" rel="stylesheet" href="assets/css/styles.css">
+
+    
+
 </head>
 <body>
-    Ciao
+    <div id="container"></div>
+
+    <script id="template-container" type="text/x-handlebars-template">
+            <!-- ******HEADER****** --> 
+    <header class="header">
+            <div class="container clearfix">                       
+                <img style="border-radius:10%" class="profile-image img-fluid float-left" src="assets/images/profile.png" alt="Giovanni Fontana" />
+                <div class="profile-content float-left">
+                    {{#with basics}}
+                    <h1 class="name">{{name}} {{surname}}</h1>
+                    <h2 class="desc">Computer Science Teacher</h2>   
+                    <ul class="social list-inline">
+                        <li class="list-inline-item"><a href="http://www.twitter.com/giovannifontana"><i class="fab fa-twitter"></i></a></li>                   
+                        <li class="list-inline-item"><a href="https://www.linkedin.com/in/giofontana/"><i class="fab fa-linkedin-in"></i></a></li>
+                        <li class="list-inline-item"><a href="https://github.com/fntgnn"><i class="fab fa-github-alt"></i></a></li>    
+                    </ul> 
+                </div><!--//profile-->
+                <a class="btn btn-cta-primary float-right" href="mailto:gio.fon@gmail.com"><i class="fas fa-paper-plane"></i> Contact Me</a>              
+            </div><!--//container-->
+            {{/with}}
+        </header><!--//header-->   
+
+</script> 
+    
+<!-- Javascript -->          
+    <script type="text/javascript" src="assets/js/jquery-3.3.1.min.js"></script>
+    <script type="text/javascript" src="assets/plugins/bootstrap/js/bootstrap.min.js"></script>    
+    <script src="assets/js/handlebars-v4.0.11.js"></script>
+    <!-- custom js -->
+    <script type="text/javascript" src="assets/js/main.js"></script>            
 </body>
 </html>
