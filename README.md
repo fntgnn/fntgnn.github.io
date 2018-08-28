@@ -1,4 +1,3 @@
-#My landing page
-Welcome to my site
+# My landing page
 
-Built with Handlebars.js
+This is my landing page, built with Handlebars.js
