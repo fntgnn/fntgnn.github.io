@@ -9,16 +9,19 @@ $(document).ready(function() {
 
 tunes = [];
 var mainKey = {};
-var intervalsNatTxt = '2 1 5 4 6 3 7 5 4 6 3 5 4 6 7 3 5 6 4 1 5 3 4 2 6 1 7 5 4 6 5 4 1 6 7 5 4 3 2 1 4 6 3 7 5 4 6 1 3 5 6 7 3 5 6 4 1 6 5 3 6 1 7 5 4 6 3 5 4 1 6 7 5 4 3 2 1 5 4 6 7 5 4 6 1 3 5 4 6 7 5 6 4 1 6 5 3 4 6 1 5 4 6 3 5 4 1 6 7 5 3 5 6 4 1 6 5 3 4 6 7 5 4 6 3 5 4 1 6 7 4 3 2 1 5 4 6 3 7 5 6 1 3 5 4 6 7 3 5 6 1 6 5 3 4 6 1 7 5 4 3 6 7 3 2 5 6 4 1 6 3 4 6 1 7 5 4 6 3 5 1 6 7 5 4 3 2 1 5 4 3 7 5 4 6 1 3 5 4 6 3 5 6 4 1 6 5 3 4 6 7 2 5 4 6 3 5 4 1 6 5 4 3 5 6 4 1 6 5 3 6 1 7 5 4 6 3 5 6 1 5 4 6 3 5 4 1 6 7 5 3 5 6 4 1 6 5 3 4 6 7 5 4 6 3 5 4 1 6 7 4 3 2 1 5 4 6 3 7 5 6 1 3 5 4 6 7 3 5 6 1 6 5 3 4 6 1 7 5 4';
-var intervalsAltTxt = '2# 1 5b 4# 6 3b 7 5# 4 6# 3b 5# 4 6b 7 3b 5 6 4# 5b 3 4# 2b 2 3 6# 1 7b 5# 4# 6 5b 4# 6b 5# 4 3b 2# 1 4 6b 3 7b 5 4 6b 1 3 5# 3b 4 6b 1 7b 5# 4# 2 6 7 3 5# 6 4 1 6b 5b 3b 6b 4 1 6b 7 5b 4 3b 2 1 5# 4 6b 3 7b 5 4 6b 1 3 5# 4 6b 7 5 6b 4 3 6b 5 3b 4 6 1 5b 4# 6b 3 5 4 1 6b 7b 5# 3 5b 6b 4# 1 6b 5 3 11 13 7b 5b 11# 13 11 5 11 1 13b 7 11 3b 9 1 5# 11 13b 3 7 5# 13 1 3 5# 11 13 7b 5b 13 1 13# 5 3b 11 13b 1 7b 5 11# 3 13# 7 3b 5 13 11# 1 13b 3b 11# 6 1 7b 4 13b 3b 5b 4 1 13b 7 5# 11 3 2# 1 4 6b 3 7b 5# 11# 6b 1 3b 5# 6 7 3 5# 13 11 1 6b 5b 3b 13b 1 7b 5 11# 6b 3 5# 4 6b 7b 5b 4 3b 2 5# 11 7b 5 6b 13 5# 4 11# 13b 7 5 6b 4 1 6 5 3b 4 6b 1 5b 1 2b 2 2# 3b 3 4 4# 5b 5 5# 6b 6 7b 7 9b 9 9# 11 11# 13b 13';
+var intervalsNatTxt = '1 2 3 4 5 6 7';
+var intervalsAltTxt = '1 2b 2 2# 3b 3 3# 4b 4 4# 5b 5 5# 6b 6 6# 7b 7 7# 9b 9 9# 11b 11 11# 13b 13 13#';
 var intervals = [];
+var interval;
 intervals['nat'] = intervalsNatTxt.split(" ");
 intervals['alt'] = intervalsAltTxt.split(" ");
 var diff = 'nat';
 var finish = false;
 var posInterval = 0;
+var total = 0;
 var right = 0;
 var wrong = 0;
+var howMany = 0;
 
 var startTime = 0;
 var endTime = 0;
@@ -52,6 +55,7 @@ function start(){
 
 function chooseKey(k){
     var n;
+    chooseLength();
     if (k == undefined)
         n = Math.floor(Math.random() * tunes.length);
     else{
@@ -65,6 +69,19 @@ function chooseKey(k){
     play();
 }
 
+function chooseLength(){
+    if($('#howMany5').prop('checked') == true)
+        howMany = 5;
+    else if($('#howMany10').prop('checked') == true)
+        howMany = 10;
+    else if($('#howMany20').prop('checked') == true)
+        howMany = 20;
+    else if($('#howManyInf').prop('checked') == true)
+        howMany = -1;
+     
+
+}
+
 function chooseDiff(difficulty){
     diff = difficulty;
     $('#setKey').css('visibility','visible');
@@ -76,26 +93,40 @@ function play(){
     $('#setKey').css('visibility','hidden');
     $('#interval').css('visibility','visible');
     $('#interval').text(intervals[diff][posInterval]);
+    $('#currentAnswer').css('visibility','visible');
     $('#key').text(mainKey.key);
+    selectNote();
     startTime = new Date().getTime();
+}
+function selectNote(getIt){
+    if(getIt != false){
+        newInterval = Math.floor(Math.random()*intervals[diff].length);
+        while(newInterval == interval)
+            newInterval = Math.floor(Math.random()*intervals[diff].length);
+        interval = newInterval;
+        $('#interval').text(intervals[diff][interval]);
+    }
 }
 
 function getNote(note){
-    console.log("devi cliccare: " + mainKey[intervals[diff][posInterval]] + " e tu cliccasti: " + note);
-    if(mainKey[intervals[diff][posInterval]] == note){
-        console.log("Mo bravo!");
+    total++;
+    var getIt = false;
+    if(mainKey[intervals[diff][interval]] == note){
         right++;
-
-        posInterval++;
-        if(posInterval == intervals[diff].length){
-            gameOver();
-        }
-        $('#interval').text(intervals[diff][posInterval]);
+        getIt = true;
     }
     else{
         wrong++;
-        console.log("Ahia");
+        getIt = false;
     }
+    $('.rightTotal').text(right);
+    $('.total').text(total);
+    if(howMany != -1 &&  total < howMany)
+        selectNote(getIt);
+    else if(howMany == -1)
+        selectNote(getIt);
+    else
+        gameOver();
 }
 
 function gameOver(){
@@ -105,6 +136,8 @@ function gameOver(){
     var minutes = Math.floor((totalTime % (1000 * 60 * 60)) / (1000 * 60));
     var seconds = Math.floor((totalTime % (1000 * 60)) / 1000);
     var strTime = hours +":"+minutes+":"+seconds;
+    $('#game').remove();
+    $('#abort').remove();
     $('.risultati').css("visibility", "visible");
     $('.right').text(right);
     $('.wrong').text(wrong);
